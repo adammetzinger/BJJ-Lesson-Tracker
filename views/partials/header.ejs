@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= title %></title>
   </head>
   <body>
     <nav>
       <a href="/">Home</a>
+      <a href="/lessons">Lessons</a>
+      <a href="/lessons/show">All Lessons</a>
         <% if (user) { %>
-            <div class="user-info"><%= user.name.split(' ')[0] %>
-            <div class="review-user"><img src="<%= user.avatar %>" alt="avatar"></div></div>
+            <div class="user-info">
+              <div class="review-user"><img src="<%= user.avatar %>" alt="avatar"></div>
+              <%= user.name.split(' ')[0] %>
+            </div>
             <a href="/logout">LOG OUT</a>
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
     </nav>
+    <div class="info">
     <h1><%= title %></h1>

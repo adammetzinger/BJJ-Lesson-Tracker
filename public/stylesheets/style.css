@@ -7,6 +7,28 @@ a {
   color: #00B7FF;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  display: grid;
+}
+
+nav > * {
+  display: inline-block;
+  margin: auto 20px 0 0;
+}
+
+.user-info {
+  display: inline-block;
+}
+
+.login img {
+  height: 30px;
+}
+
 .review-user img {
   border-radius: 50%;
   height: 40px;

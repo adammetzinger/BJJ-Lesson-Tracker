@@ -1,4 +1,22 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
+<table>
+    <thead>
+        <tr>
+            <th>curriculum</th>
+            <th>date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% lessons.forEach(function(l) { %>
+            <tr>
+                <td><%= l.curriculum %></td>
+                <td><%= l.date %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
 
-<%- include('./partials/footer') %>
+<a href="lessons/new"><button>Add Lesson</button></a>
+
+<%- include('../partials/footer') %>

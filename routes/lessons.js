@@ -1,7 +1,17 @@
 var express = require('express');
 var router = express.Router();
-const lessonsCtrl = require('../controllers/lessions');
-var ensureLoggedIn = require('ensureLoggedIn');
+const lessonCtrl = require('../controllers/lessons');
+var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 //GET /Lessons
-router.get('/less', lessonsCtrl.index);
+router.get('/', lessonCtrl.index);
+// GET /lessons
+router.get('/new', lessonCtrl.new);
+//POST /lessons
+router.post('/', lessonCtrl.create);
+// Get /lessons
+router.get('/show', lessonCtrl.show);
+// DELETE /lessons/:id
+router.delete('/reviews/:id', lessonCtrl.delete);
+
+module.exports = router;

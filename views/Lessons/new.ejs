@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<form action="/lessons" method="POST">
+    <label>Curriculum:</label>
+    <textarea name="curriculum" cols="20" rows="5"></textarea><br>
+    <label>Rounds:</label>
+    <select name="rounds">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label>Time Per Round:</label>
+    <select name="timerounds">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select><br>
+    <label>Students:</label>
+    <textarea name="students" cols="10" rows="1"></textarea><br>
+    <label>Date of Class:</label>
+    <input name="date" type="date"><br>
+    <input type="submit" value="Add Lesson">
+</form>
+
+<%- include('../partials/footer') %>
