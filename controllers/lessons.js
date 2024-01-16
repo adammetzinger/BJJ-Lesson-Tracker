@@ -35,9 +35,7 @@ async function create(req, res) {
 }
 
 async function deleteLesson(req, res) {
-    const lesson = await Lesson.findOne({ 'lessons._id': req.params.id, 'lesson.user': req.use._id });
-    if (!lesson) return res.redirect('/lessons/show');
-    lesson.remove(req.params.id);
-    await lesson.save();
-    res.redirect('/lessons/show');
+    const lesson = await Lesson.findOneAndDelete(req.params.id);
+    if (!lesson) return res.redirect('/lessons');
+    res.redirect('/lessons');
 }

@@ -24,7 +24,7 @@
                 <td><%= l.date.toLocaleDateString() %></td>
                 <td>
                     <% if (user?._id.equals(l.user)) {%>
-                        <form action="/lessons/<%= l.id %>?_metod=DELETE" method="POST">
+                        <form action="/lessons/<%= l.id %>?_method=DELETE" method="POST">
                             <button type="submit">X</button>
                         </form>
                     <% } %>
