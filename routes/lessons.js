@@ -12,6 +12,6 @@ router.post('/', lessonCtrl.create);
 // Get /lessons
 router.get('/show', lessonCtrl.show);
 // DELETE /lessons/:id
-router.delete('/reviews/:id', lessonCtrl.delete);
+router.delete('/lessons/:id', lessonCtrl.delete);
 
 module.exports = router;

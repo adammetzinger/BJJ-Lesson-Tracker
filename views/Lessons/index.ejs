@@ -1,21 +1,39 @@
 <%- include('../partials/header') %>
 
+
 <table>
     <thead>
         <tr>
-            <th>curriculum</th>
-            <th>date</th>
+            <th>Curriculum</th>
+            <th>Rounds:</th>
+            <th>Time</th>
+            <th>Students</th>
+            <th>Student belt</th>
+            <th>Date</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <% lessons.forEach(function(l) { %>
             <tr>
                 <td><%= l.curriculum %></td>
-                <td><%= l.date %></td>
+                <td><%= l.rounds %></td>
+                <td><%= l.timerounds %></td>
+                <td><%= l.students %></td>
+                <td><%= l.belt %></td>
+                <td><%= l.date.toLocaleDateString() %></td>
+                <td>
+                    <% if (user?._id.equals(l.user)) {%>
+                        <form action="/lessons/<%= l.id %>?_metod=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    <% } %>
+                </td>
             </tr>
         <% }); %>
     </tbody>
 </table>
+
 
 <a href="lessons/new"><button>Add Lesson</button></a>
 
