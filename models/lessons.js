@@ -6,7 +6,7 @@ const lessonSchema = new Schema({
     rounds: {type: Number, required: true},
     timerounds: {type: Number, required: true},
     students: [{
-        type: String,
+        type: Schema.Types.ObjectId,
         ref: 'Student'
     }],
     date: {type: Date, required: true},

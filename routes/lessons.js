@@ -9,9 +9,11 @@ router.get('/', lessonCtrl.index);
 router.get('/new', lessonCtrl.new);
 //POST /lessons
 router.post('/', lessonCtrl.create);
-// Get /lessons
-router.get('/show', lessonCtrl.show);
 // DELETE /lessons/:id
 router.delete('/:id', ensureLoggedIn, lessonCtrl.delete);
+// GET /lessons/:id
+router.get('/:id/edit', lessonCtrl.edit);
+// PUT /lesson/:id
+router.put('/:id', lessonCtrl.update);
 
 module.exports = router;

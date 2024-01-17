@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form action="/lessons" method="POST">
+<form action="/lessons/<%= lesson._id %>?_method=PUT" method="POST">
     <label>Curriculum:</label>
     <textarea name="curriculum" cols="20" rows="5"></textarea><br>
     <label>Rounds:</label>
@@ -24,14 +24,7 @@
         <option value="8">8</option>
     </select><br>
     <label>Students:</label>
-    <form action="/students" method="POST">
-        <select name="Students">
-            <%- students.map(s => 
-                `<option value="${s._id}">${s.name}</option>`
-            ).join('') %>
-        </select>
-        <button type="submit">Add Student</button>
-    </form>
+    <textarea name="students" cols="10" rows="1"></textarea><br>
     <label>Date of Class:</label>
     <input name="date" type="date"><br>
     <input type="submit" value="Add Lesson">

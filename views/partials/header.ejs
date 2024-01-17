@@ -7,8 +7,8 @@
   <body>
     <nav>
       <% if (user) { %>
+        <a href="/students/new">Add Student to list</a>
         <a href="/lessons">Lessons</a>
-        <a href="/lessons/show">All Lessons</a>
         <div class="user-info">
           <div class="review-user"><img src="<%= user.avatar %>" alt="avatar"></div>
           <%= user.name.split(' ')[0] %>

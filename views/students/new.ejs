@@ -1,7 +1,15 @@
 <%- include('../partials/header') %>
 
-<form action="" method="POST">
 
+
+<form id="add-student-form" action="/students" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Belt:</label>
+  <input type="text" name="belt">
+  <label>Stripes:</label>
+  <input type="number" name="stripes">
+  <input type="submit" value="Add Student">
 </form>
 
 <%- include('../partials/footer') %>
