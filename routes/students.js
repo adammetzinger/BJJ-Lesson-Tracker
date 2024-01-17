@@ -7,5 +7,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/new', studentCtrl.new);
 // POST /students
 router.post('/', studentCtrl.create);
+// POST /lessons/:id/students
+router.post('/lessons/:id/students', ensureLoggedIn, studentCtrl.addToLesson);
 
 module.exports = router;

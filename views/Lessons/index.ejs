@@ -14,12 +14,13 @@
         </tr>
     </thead>
     <tbody>
+        <% if (lessons.length) { %>
         <% lessons.forEach(function(l) { %>
             <tr>
                 <td><%= l.curriculum %></td>
                 <td><%= l.rounds %></td>
                 <td><%= l.timerounds %></td>
-                <td><form action="/lessons/<%= lesson._id %>/students" method="POST">
+                <td><form action="/lessons/<%= l._id %>/students" method="POST">
                     <select name="studentId">
                         <%- students.map(s => 
                             `<option value="${s._id}">${s.name}</option>`
@@ -37,11 +38,14 @@
                 </td>
                 <td>
                     <% if (user?._id.equals(l.user)) {%>
-                        <a href="/lessons/<%= l.id %>/edit">edit</a>
+                        <a href="/lessons/<%= l.id %>/edit"><button>Edit</button></a>
                     <% } %>
                 </td>
             </tr>
         <% }); %>
+        <%} else {%>
+            <p>No Lessons</p>
+        <% } %>
     </tbody>
 </table>
 

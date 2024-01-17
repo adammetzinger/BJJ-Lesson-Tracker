@@ -1,5 +1,5 @@
 const Lesson = require('../models/lessons');
-
+const Student = require('../models/student');
 
 module.exports = {
     index,
@@ -12,8 +12,8 @@ module.exports = {
 
 async function index(req, res) {
     const lessons = await Lesson.find({});
-    console.log(lessons);
-    res.render('lessons/index', { title: 'All Lessons', lessons } );
+    const students = await Student.find({ _id: { $nin: lessons.students } }).sort('name');
+    res.render('lessons/index', { title: 'All Lessons', lessons, students } );
 };
 
 function newLesson(req, res) {
