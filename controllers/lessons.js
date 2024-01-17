@@ -12,6 +12,7 @@ module.exports = {
 
 async function index(req, res) {
     const lessons = await Lesson.find({});
+    console.log(lessons);
     res.render('lessons/index', { title: 'All Lessons', lessons } );
 };
 

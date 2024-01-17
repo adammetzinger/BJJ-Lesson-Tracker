@@ -5,7 +5,7 @@
     <thead>
         <tr>
             <th>Curriculum</th>
-            <th>Rounds:</th>
+            <th>Rounds</th>
             <th>Time</th>
             <th>Students</th>
             <th>Date</th>
@@ -19,7 +19,14 @@
                 <td><%= l.curriculum %></td>
                 <td><%= l.rounds %></td>
                 <td><%= l.timerounds %></td>
-                <td><%= l.students %></td>
+                <td><form action="/lessons/<%= lesson._id %>/students" method="POST">
+                    <select name="studentId">
+                        <%- students.map(s => 
+                            `<option value="${s._id}">${s.name}</option>`
+                        ).join('') %>
+                    </select>
+                    <button type="submit">Add Student</button>
+                </form></td>
                 <td><%= l.date.toLocaleDateString() %></td>
                 <td>
                     <% if (user?._id.equals(l.user)) {%>

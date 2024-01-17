@@ -23,15 +23,6 @@
         <option value="7">7</option>
         <option value="8">8</option>
     </select><br>
-    <label>Students:</label>
-    <form action="/students" method="POST">
-        <select name="Students">
-            <%- students.map(s => 
-                `<option value="${s._id}">${s.name}</option>`
-            ).join('') %>
-        </select>
-        <button type="submit">Add Student</button>
-    </form>
     <label>Date of Class:</label>
     <input name="date" type="date"><br>
     <input type="submit" value="Add Lesson">
