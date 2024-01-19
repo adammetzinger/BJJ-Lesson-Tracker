@@ -26,14 +26,18 @@
                         `<ul>${s.name}, ${s.belt}, ${s.stripes}</ul>`
                     ).join('') %>
                 </td>
-                <td class="class-item"><form action="/lessons/<%= l._id %>/students" method="POST">
+                <td class="class-item">
+                    <% if (user?._id.equals(l.user)) {%>
+                    <form action="/lessons/<%= l._id %>/students" method="POST">
                     <select name="studentId">
                         <%- students.map(s => 
                             `<option value="${s._id}">${s.name}</option>`
                         ).join('') %>
                     </select>
                     <button type="submit">Add Student</button>
-                </form></td>
+                    <% } %>
+                    </form>
+                </td>
                 <td class="class-item"><%= l.date.toLocaleDateString() %></td>
                 <td class="class-item">
                     <% if (user?._id.equals(l.user)) {%>
