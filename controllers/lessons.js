@@ -13,7 +13,6 @@ module.exports = {
 async function index(req, res) {
     const lessons = await Lesson.find({}).populate('students');
     const students = await Student.find({ _id: { $nin: lessons.students } }).sort('name');
-    console.log(students);
     res.render('lessons/index', { title: 'All Lessons', lessons, students } );
 };
 

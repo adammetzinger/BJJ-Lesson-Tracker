@@ -156,3 +156,83 @@ td>ul {
         "submit submit"
     ;
 }
+
+.lesson-form .a {
+    grid-area: curriulum;
+    text-align: end;
+    margin-top: .5rem;
+    font-size: 20px;
+}
+
+.lesson-form .a-b {
+    grid-area: curriuluminput;
+    text-align: start;
+    margin-top: .5rem;
+    font-size: 20px; 
+}
+
+.lesson-form .b {
+    grid-area: rounds;
+    text-align: end;
+    margin-top: .5rem;
+    font-size: 20px; 
+}
+
+.lesson-form .b-b {
+    grid-area: roundsinput;
+    text-align: start;
+    margin-top: .5rem;
+    font-size: 20px; 
+}
+
+.lesson-form .c {
+    grid-area: time;
+    text-align: end;
+    margin-top: .5rem;
+    font-size: 20px; 
+}
+
+.lesson-form .c-b {
+    grid-area: timeinput;
+    text-align: start;
+    margin-top: .5rem;
+    font-size: 20px;
+}
+
+.lesson-form .d {
+    grid-area: date;
+    text-align: end;
+    margin-top: .5rem;
+    font-size: 20px;
+}
+
+.lesson-form .d-b {
+    grid-area: dateinput;
+    text-align: start;
+    margin-top: .5rem;
+    font-size: 20px;
+}
+
+.lesson-form .e{
+    grid-area: submit;
+    justify-self: center;
+    margin-top: .5rem;
+    font-size: 20px;
+    width: 8rem;
+}
+
+.lesson-form {
+    justify-self: center;
+    width: 20rem;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-areas: 
+        "curriulum curriuluminput"
+        "rounds roundsinput"
+        "time timeinput"
+        "date dateinput"
+        "submit submit"
+    ;
+}
