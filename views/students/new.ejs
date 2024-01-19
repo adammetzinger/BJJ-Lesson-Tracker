@@ -1,15 +1,13 @@
 <%- include('../partials/header') %>
 
-
-
-<form id="add-student-form" action="/students" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name">
-  <label>Belt:</label>
-  <input type="text" name="belt">
-  <label>Stripes:</label>
-  <input type="number" name="stripes">
-  <input type="submit" value="Add Student">
+<form class="new-student" id="add-student-form" action="/students" method="POST">
+    <label class="a">Name:</label>
+    <input class="a-b" type="text" name="name">
+    <label class="b">Belt:</label>
+    <input class="b-b" type="text" name="belt">
+    <label class="c">Stripes:</label>
+    <input class="c-b" type="number" name="stripes">
+    <input name="d" class="button" type="submit" value="Add Student">
 </form>
-
+    
 <%- include('../partials/footer') %>

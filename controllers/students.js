@@ -25,7 +25,6 @@ async function create(req, res) {
 async function addToLesson(req, res) {
     const lesson = await Lesson.findById(req.params.id);
     lesson.students.push(req.body.studentId);
-    console.log(lesson.students);
     await lesson.save();
     res.redirect('/lessons')
 }

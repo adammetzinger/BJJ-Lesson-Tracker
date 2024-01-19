@@ -18,15 +18,15 @@
         <% if (lessons.length) { %>
         <% lessons.forEach(function(l) { %>
             <tr>
-                <td><%= l.curriculum %></td>
-                <td><%= l.rounds %></td>
-                <td><%= l.timerounds %></td>
-                <td>
+                <td class="class-item"><%= l.curriculum %></td>
+                <td class="class-item"><%= l.rounds %></td>
+                <td class="class-item"><%= l.timerounds %></td>
+                <td class="class-item">
                     <%- l.students.map(s =>
-                        `<li>${s.name}, ${s.belt}, ${s.stripes}</li>`
+                        `<ul>${s.name}, ${s.belt}, ${s.stripes}</ul>`
                     ).join('') %>
                 </td>
-                <td><form action="/lessons/<%= l._id %>/students" method="POST">
+                <td class="class-item"><form action="/lessons/<%= l._id %>/students" method="POST">
                     <select name="studentId">
                         <%- students.map(s => 
                             `<option value="${s._id}">${s.name}</option>`
@@ -34,15 +34,15 @@
                     </select>
                     <button type="submit">Add Student</button>
                 </form></td>
-                <td><%= l.date.toLocaleDateString() %></td>
-                <td>
+                <td class="class-item"><%= l.date.toLocaleDateString() %></td>
+                <td class="class-item">
                     <% if (user?._id.equals(l.user)) {%>
                         <form action="/lessons/<%= l.id %>?_method=DELETE" method="POST">
                             <button type="submit">Delete</button>
                         </form>
                     <% } %>
                 </td>
-                <td>
+                <td class="class-item">
                     <% if (user?._id.equals(l.user)) {%>
                         <a href="/lessons/<%= l.id %>/edit"><button>Edit</button></a>
                     <% } %>
@@ -50,12 +50,18 @@
             </tr>
         <% }); %>
         <%} else {%>
-            <p>No Lessons</p>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <p>No Lessons</p>
+                </td>
+            </tr>
         <% } %>
     </tbody>
 </table>
 
 
-<a href="lessons/new"><button>Add Lesson</button></a>
+<a href="lessons/new" class="add-lesson"><button>Add Lesson</button></a>
 
 <%- include('../partials/footer') %>

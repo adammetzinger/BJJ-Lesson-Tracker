@@ -10,7 +10,7 @@
         <a href="/students/new">Add Student to list</a>
         <a href="/lessons">Lessons</a>
         <div class="user-info">
-          <div class="review-user"><img src="<%= user.avatar %>" alt="avatar"></div>
+          <div class="user"><img src="<%= user.avatar %>" alt="avatar"></div>
           <%= user.name.split(' ')[0] %>
         </div>
         <a href="/logout">LOG OUT</a>
@@ -20,4 +20,4 @@
       <% } %>
     </nav>
     <div class="info">
-    <h1><%= title %></h1>
+    <h1 class="title"><%= title %></h1>
