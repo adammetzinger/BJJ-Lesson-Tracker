@@ -8,11 +8,27 @@ This application was built with my previous experince teaching knowing students 
 
 ![](/planing/6.png)
 
+# Technologies Used
+- JavaScript
+
+- HTML
+
+- CSS
+
+- Express.js
+
+- MongoDB
+
+- Embedded JavaScript
+
 # Getting Started
 
 [Click to use BJJ Lesson Tracker](https://bjj-lessons-tracker-f36abd80f1d1.herokuapp.com/)
 
 [Click to View Project Planning](https://trello.com/b/S7GrWINH/bjj-lesson-tracker)
+
+
+# Wire Frame
 
 ![](/planing/wireframe.png)
 
